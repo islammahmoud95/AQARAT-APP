@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".Activities.Bank_Transfer">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <hu.aut.utillib.circular.widget.CircularFrameLayout
+            android:id="@+id/simple_reveal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/circle_shape_lay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="90dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/corner_shape_top" />
+
+                <TextView
+                    android:id="@+id/title_act_name"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/white_one"
+                    android:textSize="19sp" />
+
+                <Button
+                    android:id="@+id/back_btn"
+                    android:layout_width="20dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/left_arrow_icon"
+                    android:scaleType="fitXY" />
+
+            </RelativeLayout>
+
+        </hu.aut.utillib.circular.widget.CircularFrameLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout11"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+
+        <ScrollView
+            android:id="@+id/transfer_scroll_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/banks_recycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/bank_name_edt"
+                    style="@style/editText_shape_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:hint="@string/bank_name_str"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:textColor="@color/purple_color" />
+
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/account_name_edt"
+                    style="@style/editText_shape_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:hint="@string/account_name_str"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:textColor="@color/purple_color" />
+
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/account_number_edt"
+                    style="@style/editText_shape_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"
+                    android:enabled="false"
+                    android:hint="@string/account_number_str"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:textColor="@color/purple_color" />
+
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/amount_edt"
+                    style="@style/editText_shape_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/amount_str"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:textColor="@color/purple_color" />
+
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/legal_name_edt"
+                    style="@style/editText_shape_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/legal_name_str"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:textColor="@color/purple_color" />
+
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/process_num_edt"
+                    style="@style/editText_shape_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/process_number_str"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:textColor="@color/purple_color" />
+
+
+                <Button
+                    android:id="@+id/transfer_bank_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/button_purple"
+                    android:padding="12dp"
+                    android:text="@string/done"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white_one"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <hu.aut.utillib.circular.widget.CircularFrameLayout
+            android:id="@+id/simple_reveal_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/circle_shape_lay_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/corner_shape_bottom" />
+
+            </RelativeLayout>
+
+        </hu.aut.utillib.circular.widget.CircularFrameLayout>
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_interest_lay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    android:weightSum="3"
+    tools:context=".Activities.Sub_Cat_Act">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="end"
+        android:layout_weight="0.3">
+
+        <hu.aut.utillib.circular.widget.CircularFrameLayout
+            android:id="@+id/simple_reveal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/circle_shape_lay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="90dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/corner_shape_top" />
+
+                <TextView
+                    android:id="@+id/title_act_name"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/white_one"
+                    android:textSize="19sp" />
+
+                <Button
+                    android:id="@+id/back_btn"
+                    android:layout_width="20dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/left_arrow_icon"
+                    android:scaleType="fitXY" />
+
+            </RelativeLayout>
+
+        </hu.aut.utillib.circular.widget.CircularFrameLayout>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.5"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/transparent"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <LinearLayout
+                android:id="@+id/lands_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@drawable/interest_back"
+                android:gravity="center"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/land_str"
+                    android:gravity="center"
+                    android:textStyle="bold|italic"
+                    android:textSize="17sp"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/purple_color"
+                    android:layout_marginBottom="10dp"/>
+
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/interest_lands_recycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:visibility="visible"
+                    tools:listitem="@layout/adapter_interest_my_items" />
+
+
+                <TextView
+                    android:id="@+id/no_items_lands"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:paddingTop="10dp"
+                    android:alpha="0.8"
+                    android:drawableTop="@mipmap/ic_launcher"
+                    android:gravity="center"
+                    android:text="@string/there_s_no_items"
+                    android:textColor="@color/purple_light_color"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageButton
+                        android:id="@+id/expand_lands_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/arraw_down_icon" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/add_land_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/ic_action_add"
+                        app:backgroundTint="@color/purple_color"
+                        app:fabSize="mini" />
+                </RelativeLayout>
+
+
+
+
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/transparent"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <LinearLayout
+                android:id="@+id/apart_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@drawable/interest_back"
+                android:gravity="center"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/apartments_str"
+                    android:gravity="center"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="bold|italic"
+                    android:textSize="17sp"
+                    android:textColor="@color/purple_color"
+                    android:layout_marginBottom="10dp"/>
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/apart_lands_recycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    tools:listitem="@layout/adapter_interest_my_items"/>
+
+
+                <TextView
+                    android:id="@+id/no_items_apart"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:paddingTop="10dp"
+                    android:alpha="0.8"
+                    android:drawableTop="@mipmap/ic_launcher"
+                    android:gravity="center"
+                    android:text="@string/there_s_no_items"
+                    android:textColor="@color/purple_light_color"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/add_apart_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    app:fabSize="mini"
+                    android:src="@drawable/ic_action_add"
+                    app:backgroundTint="@color/purple_color" />
+
+
+
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="0.2"
+        android:gravity="bottom">
+
+
+        <hu.aut.utillib.circular.widget.CircularFrameLayout
+            android:id="@+id/simple_reveal_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/circle_shape_lay_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/corner_shape_bottom" />
+
+            </RelativeLayout>
+
+        </hu.aut.utillib.circular.widget.CircularFrameLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+

@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="app_camera_height">500dp</dimen>
+    <dimen name="bottom_height">150dp</dimen>
+</resources>

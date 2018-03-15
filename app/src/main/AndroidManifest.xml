@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sawa.aqarat">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- Permission to start Alarm on device reboot -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".utilities.AppController"
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme_no_ActionBar">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_Api_Key" />
+
+
+
+        <service
+            android:name=".utilities.MyFirebaseMessagingService"
+            android:exported="false"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".utilities.MyFirebaseInstanceIDService"
+            android:exported="false"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <!--
+             Set custom default icon. This is used when no icon is set for incoming notification messages.
+             See README(https://goo.gl/l4GJaQ) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+        <!--
+             Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <!-- for google plus -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- facebook social -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <receiver android:name=".ADS.AlarmReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Will not be called unless the application explicitly enables it -->
+        <receiver
+            android:name=".ADS.DeviceBootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".utilities.ImageLoader.ImageGesture"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboardHidden|screenSize"
+            android:label="@string/home_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".utilities.MapActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Splash_Activity"
+            android:configChanges="keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.Login_Activity"
+            android:label="@string/login_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".Activities.Activition_activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".Activities.Forget_Pass_act"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".Activities.Register_Activity"
+            android:label="@string/register_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".Activities.Sub_Cat_Act"
+            android:label="Sub Cat"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name=".Activities.About_us_Act"
+            android:label="@string/about_us_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+
+
+        <activity android:name=".Activities.Change_Pass_Act"
+            android:label="@string/change_password_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+
+
+        <activity
+            android:name=".Activities.FAQ_question_Activity"
+            android:label="@string/faq_STR"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".Activities.Change_Lang_Activity"
+            android:label="@string/chng_lang_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".Activities.Tickets.Tickets_All_Activ"
+            android:label="@string/my_ticket_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name=".Activities.Tickets.Ticket_Details_Activ" />
+        <activity
+            android:name=".Activities.Tickets.Create_Ticket"
+            android:label="@string/create_tickt_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.gun0912.tedpicker.ImagePickerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.My_Posts_Activ"
+            android:label="@string/my_ads_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".Activities.Contact_US"
+            android:label="@string/contact_us_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".Activities.Add_post_Activ"
+            android:label="@string/new_ad_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".Activities.All_Products_Activ"
+            android:label="@string/all_ads_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".Activities.Product_Details"
+            android:label="@string/details_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".Activities.My_WishList"
+            android:label="@string/wish_list_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".Activities.Update_Profile"
+            android:label="@string/upd_prof_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".Activities.Filter_Search_Activity"
+            android:label="@string/search_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".Activities.Filter_Result_Activity"
+            android:label="@string/my_search_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".Activities.My_Interested_Activity"
+            android:label="@string/my_interested_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_no_ActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".Activities.Interest_Details_Activity"
+            android:label="@string/all_intered_str"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".ADS.AD_Activity"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity android:name=".Activities.Premium_Request_Act"
+            android:label="@string/prem_req_str"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
+
+        <activity android:name=".Activities.Bank_Transfer"
+            android:label="@string/bank_transfer_str"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
+
+        <activity android:name=".Activities.Admin_Messages_activ"
+            android:label="@string/messages"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
+
+
+        <activity android:name=".Activities.Notifications_History_Activ"
+            android:label="@string/my_notifications"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
+
+
+        <activity android:name=".Activities.Genral_Notify_detail_activ"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <activity android:name=".ADS.Ads_Activity"
+            android:theme="@style/AppTheme.CustomTheme"></activity>
+
+    </application>
+
+</manifest>

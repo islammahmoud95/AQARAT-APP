@@ -1,0 +1,92 @@
+<resources>
+
+
+    <!--===================== splash section ===========================-->
+    <style name="AppTheme_no_ActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/purple_light_color</item>
+        <item name="colorAccent">@color/purple_light_color</item>
+    </style>
+
+    <declare-styleable name="UnderlinedTextView" >
+        <attr name="underlineWidth" format="dimension" />
+        <attr name="underlineColor" format="color" />
+    </declare-styleable>
+
+
+    <style name="thin.white" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif-thin</item>
+        <item name="android:textColor">@android:color/holo_blue_bright</item>
+    </style>
+
+    <style name="thin.white.small" parent="thin.white">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="thin.white.small.button" parent="thin.white.small">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
+
+
+    <style name="input_layout" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColor">@color/purple_color</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">#0e11e7</item>
+        <item name="android:textColorHighlight">@color/purple_light_color</item>
+        <item name="android:textColorLink">@color/purple_light_color</item>
+
+
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/purple_light_color</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorControlNormal">@color/purple_light_color</item>
+        <item name="colorControlActivated">@color/purple_color</item>
+
+    </style>
+
+
+    <!--for editText-->
+    <style name="editText_shape_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/edittext_circle_img</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:popupBackground">#DFFFFFFF</item>
+    </style>
+
+
+    <!--for spinner-->
+    <style name="spinner_shape_style" parent="@android:style/Widget.TextView.SpinnerItem" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/spinner_circle_img</item>
+        <item name="android:textColor">@color/purple_light_color</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:popupBackground">#DFFFFFFF</item>
+    </style>
+    <style name="AppTheme.CustomTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+
+</resources>

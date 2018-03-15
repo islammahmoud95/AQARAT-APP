@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".Activities.Tickets.Ticket_Details_Activ">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/poduct_details_mainLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <hu.aut.utillib.circular.widget.CircularFrameLayout
+                android:id="@+id/simple_reveal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/circle_shape_lay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:layout_width="140dp"
+                        android:layout_height="70dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/corner_shape_top" />
+
+                    <TextView
+                        android:id="@+id/title_act_name"
+                        android:layout_width="100dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:gravity="center"
+                        android:textColor="@color/white_one"
+                        android:textSize="19sp" />
+
+                    <Button
+                        android:id="@+id/back_btn"
+                        android:layout_width="20dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:background="@drawable/left_arrow_icon"
+                        android:scaleType="fitXY" />
+
+                </RelativeLayout>
+
+            </hu.aut.utillib.circular.widget.CircularFrameLayout>
+
+        </RelativeLayout>
+
+        <com.daimajia.slider.library.SliderLayout
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+
+        <TextView
+            android:id="@+id/ad_type_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/slider"
+            android:background="@drawable/corner_ad_special"
+            android:padding="10dp"
+            android:textColor="@color/white_one"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/slider"
+            tools:text="@string/special_ad_str" />
+
+        <LinearLayout
+            android:id="@+id/name_num_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/slider">
+
+
+            <TextView
+                android:id="@+id/owner_name_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="0.45"
+                android:textColor="@color/purple_color"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                tools:text="owner name" />
+
+
+            <TextView
+                android:id="@+id/owner_number_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="0.55"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/smartphone_icon"
+                android:textColor="@color/blue_color"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                tools:text="owner phone" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name_num_lay">
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45"
+                android:text="@string/type_str"
+                android:textColor="@color/purple_light_color"
+                android:textSize="17sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/estate_type_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.55"
+                android:textColor="@color/purple_color"
+                android:textSize="15sp"
+                android:textStyle="bold|italic"
+                tools:text="estate type" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45"
+                android:text="@string/area_str"
+                android:textColor="@color/purple_light_color"
+                android:textSize="17sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/area_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.55"
+                android:textColor="@color/purple_color"
+                android:textSize="15sp"
+                android:textStyle="bold|italic"
+                tools:text="areaaaaa" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45"
+                android:text="@string/monthly_rent_total_price_str"
+                android:textColor="@color/purple_light_color"
+                android:textSize="17sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/rent_price_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.55"
+                android:textColor="@color/purple_color"
+                android:textSize="15sp"
+                android:textStyle="bold|italic"
+                tools:text="2500" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
+
+
+            <com.sawa.aqarat.utilities.UnderlinedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="@string/address_str"
+                android:textColor="@color/purple_color"
+                android:textSize="22sp"
+                android:textStyle="bold|italic"
+                app:underlineColor="@color/purple_light_color"
+                app:underlineWidth="3dp" />
+
+
+            <TextView
+                android:id="@+id/city_region_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blue_color"
+                android:textSize="15sp"
+                android:textStyle="bold|italic"
+                tools:text="cairo agoza" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/full_address_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/location_btn"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:textColor="@color/blue_color"
+                    android:textSize="17sp"
+                    android:textStyle="bold|italic"
+                    tools:text="150 st abd al latif cairroooo" />
+
+
+                <ImageButton
+                    android:id="@+id/location_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/map_pin_icon" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/num_rooms_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45"
+                android:text="@string/no_of_rooms_str"
+                android:textColor="@color/purple_light_color"
+                android:textSize="17sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/num_rooms_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.55"
+                android:textColor="@color/purple_color"
+                android:textSize="15sp"
+                android:textStyle="bold|italic"
+                tools:text="7" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/num_bathrooms_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/num_rooms_lay">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45"
+                android:text="@string/no_of_bathrooms_str"
+                android:textColor="@color/purple_light_color"
+                android:textSize="17sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/num_bathrooms"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.55"
+                android:textColor="@color/purple_color"
+                android:textSize="15sp"
+                android:textStyle="bold|italic"
+                tools:text="7" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/floor_number_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/num_bathrooms_lay">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45"
+                android:text="@string/floor_number_str"
+                android:textColor="@color/purple_light_color"
+                android:textSize="17sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/floor_number_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.55"
+                android:textColor="@color/purple_color"
+                android:textSize="15sp"
+                android:textStyle="bold|italic"
+                tools:text="7" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/num_of_floors_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/floor_number_lay">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45"
+                android:text="@string/number_of_floors_str"
+                android:textColor="@color/purple_light_color"
+                android:textSize="17sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/num_of_floors_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.55"
+                android:textColor="@color/purple_color"
+                android:textSize="15sp"
+                android:textStyle="bold|italic"
+                tools:text="77" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/finishing_type_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/num_of_floors_lay">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45"
+                android:text="@string/finishing_type_str"
+                android:textColor="@color/purple_light_color"
+                android:textSize="17sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/finishing_type_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.55"
+                android:textColor="@color/purple_color"
+                android:textSize="15sp"
+                android:textStyle="bold|italic"
+                tools:text="full complete" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/finishing_type_lay">
+
+            <com.sawa.aqarat.utilities.UnderlinedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/description_str"
+                android:textColor="@color/purple_color"
+                android:textSize="22sp"
+                app:underlineColor="@color/purple_light_color"
+                app:underlineWidth="3dp" />
+
+
+            <TextView
+                android:id="@+id/describ_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/purple_color"
+                android:textSize="14sp"
+                android:textStyle="bold|italic"
+                tools:text="saaaample describ" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/buttons_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
+
+
+            <LinearLayout
+                android:id="@+id/wish_list_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circles_button">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/wish_icon" />
+
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="5"
+                    android:text="@string/add_to_wish_list_str"
+                    android:textColor="@color/purple_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contact_us_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circles_button">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/phone_icon"
+                        android:padding="20dp" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="5"
+                    android:text="@string/contact_us_str"
+                    android:textColor="@color/purple_color"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/line_seprate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttons_lay">
+
+            <TextView
+                android:id="@+id/tvText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/leave_a_comment_str"
+                android:textColor="@color/purple_color"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_toStartOf="@id/tvText"
+                android:background="@color/purple_color" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:layout_toEndOf="@id/tvText"
+                android:background="@color/purple_color" />
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/comments_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_seprate" />
+
+
+        <LinearLayout
+            android:id="@+id/post_com_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/comments_recycle">
+
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/content_reply_txt"
+                style="@style/editText_shape_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:hint="@string/your_comment_str"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textColor="@color/purple_color"
+                android:textColorHint="@color/purple_light_color" />
+
+
+            <Button
+                android:id="@+id/comments_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_purple"
+                android:minHeight="30dp"
+                android:minWidth="150dp"
+                android:text="@string/comment_str"
+                android:textAllCaps="false"
+                android:textColor="@color/white_one"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/post_com_lay">
+
+
+            <hu.aut.utillib.circular.widget.CircularFrameLayout
+                android:id="@+id/simple_reveal_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/circle_shape_lay_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/corner_shape_bottom" />
+                </RelativeLayout>
+
+            </hu.aut.utillib.circular.widget.CircularFrameLayout>
+        </RelativeLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

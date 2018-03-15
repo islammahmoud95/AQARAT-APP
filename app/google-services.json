@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "424760155014",
+    "firebase_url": "https://aqarat-191014.firebaseio.com",
+    "project_id": "aqarat-191014",
+    "storage_bucket": "aqarat-191014.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424760155014:android:07bd1756732b0454",
+        "android_client_info": {
+          "package_name": "com.sawa.aqarat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "424760155014-nc96tl2q0jpnsas3m5ru5rvf2jrcns92.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sawa.aqarat",
+            "certificate_hash": "246315231db644863fc42b10613b39ea4965ad2e"
+          }
+        },
+        {
+          "client_id": "424760155014-9daqlfhgitfn7bsqtk6do3c6s8gbqmo7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdCVZo4JtB5JZy-gcFrqQjap6cMlf2zfo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "424760155014-9daqlfhgitfn7bsqtk6do3c6s8gbqmo7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

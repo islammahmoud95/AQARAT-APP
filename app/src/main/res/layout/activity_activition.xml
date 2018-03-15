@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_activ_lay"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        app:cardBackgroundColor="@color/background_color"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardElevation="10dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end">
+
+                <hu.aut.utillib.circular.widget.CircularFrameLayout
+                    android:id="@+id/simple_reveal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/circle_shape_lay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible">
+
+                        <ImageView
+                            android:layout_width="140dp"
+                            android:layout_height="90dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/corner_shape_top" />
+
+                        <TextView
+                            android:id="@+id/title_act_name"
+                            android:layout_width="100dp"
+                            android:layout_height="80dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            android:gravity="center"
+                            android:text="@string/activation_code_str"
+                            android:textColor="@color/white_one"
+                            android:textSize="19sp" />
+
+
+                        <Button
+                            android:id="@+id/back_btn"
+                            android:layout_width="20dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/left_arrow_icon"
+                            android:scaleType="fitXY" />
+
+                    </RelativeLayout>
+
+                </hu.aut.utillib.circular.widget.CircularFrameLayout>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/locker_big_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/activation_code_str"
+                android:textColor="@color/purple_color"
+                android:textSize="19sp" />
+
+
+            <com.raycoarana.codeinputview.CodeInputView
+                android:id="@+id/code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:code_text_color="@color/purple_color"
+                app:error_color="@color/error_color"
+                app:input_type="numeric"
+                app:length_of_code="4"
+                app:underline_color="@color/purple_light_color"
+                app:underline_selected_color="@color/purple_color" />
+
+
+            <com.sawa.aqarat.utilities.UnderlinedTextView
+                android:id="@+id/resend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/resend_code_str"
+                android:textAllCaps="false"
+                android:textColor="@color/purple_color"
+                app:underlineColor="@color/purple_color"
+                app:underlineWidth="3dp" />
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="bottom">
+
+
+                <hu.aut.utillib.circular.widget.CircularFrameLayout
+                    android:id="@+id/simple_reveal_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/circle_shape_lay_bottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/corner_shape_bottom" />
+
+                    </RelativeLayout>
+
+                </hu.aut.utillib.circular.widget.CircularFrameLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
+
